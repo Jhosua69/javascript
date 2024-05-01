@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: antiquewhite;
+            background-color: black;
+        }
+
+        h1 {
+            color: red;
+            margin: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        code {
+            background-color: #333;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #FF5733;
+            margin: 15px 0;
+        }
+
+        .carousel-container {
+            width: 70%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .carousel-img {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FACTORIAL</h1>
+    <script src="mensaje.js"></script>
+    <h2>Explicación del cálculo del factorial:</h2>
+
+    <p>
+        El cálculo del factorial se realiza de la siguiente manera:
+        <br><br>
+        <code>n = prompt("Digite n: ");</code> solicita al usuario que ingrese un número 'n'.
+        <br><br>
+        <code>const e = 2.71828182845;</code> define la constante 'e' como la constante matemática 'e'.
+        <br><br>
+        <code>base = 2;</code> define la base para el cálculo del factorial.
+        <br><br>
+        <code>nFac = Math.sqrt(2 * Math.PI * n) * Math.pow((n / e), base);</code> calcula la aproximación del factorial
+        utilizando la fórmula de Stirling.
+        <br><br>
+        Finalmente, <code>console.log("Aproximación del factorial:", nFac.toFixed(2));</code> imprime la aproximación
+        del factorial en la consola del navegador con dos decimales.
+    </p>
+    <div class="carousel-container">
+        <!-- Imágenes del carrusel -->
+        <img class="carousel-img" src="img/1.png" alt="Ejemplo 1">
+        <img class="carousel-img" src="img/2.png" alt="Ejemplo 2">
+        <img class="carousel-img" src="img/3.png" alt="Ejemplo 3">
+    </div>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("carousel-img");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Cambia la imagen cada 2 segundos
+        }
+    </script>
+</body>
+
+</html>
